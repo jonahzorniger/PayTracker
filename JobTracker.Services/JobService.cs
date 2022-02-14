@@ -13,7 +13,7 @@ namespace JobTracker.Services
     {
         private readonly Guid _userId;
 
-        public NoteService(Guid userId)
+        public JobService(Guid userId)
         {
             _userId = userId;
         }
@@ -50,6 +50,9 @@ namespace JobTracker.Services
                                         {
                                             JobId = e.JobId,
                                             JobName = e.JobName,
+                                            Description = e.Description,
+                                            SoldAmount = e.SoldAmount,
+                                            Earnings = e.Earnings,
                                             CreatedUtc = e.CreatedUtc
                                         }
 

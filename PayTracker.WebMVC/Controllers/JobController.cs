@@ -1,4 +1,6 @@
 ﻿using JobTracker.Models;
+using JobTracker.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace PayTracker.WebMVC.Controllers
         // GET: Job
         public ActionResult Index()
         {
-            var model = new JobListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new JobService(userId);
+            var model = service.GetJobs();
+
             return View(model);
         }
 
@@ -27,12 +32,17 @@ namespace PayTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(JobCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
-        }
 
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new JobService(userId);
+
+            service.CreateJob(model);
+
+            return RedirectToAction("Index");
+        }
     }
 }

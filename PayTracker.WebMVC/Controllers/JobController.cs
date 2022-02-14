@@ -37,12 +37,24 @@ namespace PayTracker.WebMVC.Controllers
                 return View(model);
             }
 
+            var service = CreateJobService();
+
+            if (service.CreateJob(model))
+            {
+               TempData["SaveResult"] = "Your note was created.";
+               return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Note could not be created.");
+
+            return View(model);
+        }
+
+        private JobService CreateJobService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new JobService(userId);
-
-            service.CreateJob(model);
-
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }

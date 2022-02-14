@@ -21,6 +21,8 @@ namespace JobTracker.Data
         [Required]
         public int CustomerId { get; set; }
 
+        public string JobName { get; set; }
+
         public string Description { get; set; }
 
         [Required]

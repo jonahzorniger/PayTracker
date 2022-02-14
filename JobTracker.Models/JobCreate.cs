@@ -15,6 +15,16 @@ namespace JobTracker.Models
         public string JobName { get; set; }
 
         [MaxLength(8000)]
-        public string JobDescription { get; set; }
+        public string Description { get; set; }
+
+        [Required]
+        public int SoldAmount { get; set; }
+
+        [Required]
+        public int Earnings { get; set; }
+
+        [Required]
+        public DateTimeOffset CreatedUtc { get; set; }
+
     }
 }

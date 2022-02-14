@@ -57,11 +57,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JobTracker.Data\PayTracker.Data.csproj">
+      <Project>{8a6417bf-6e80-4090-ae42-521fd2d5faec}</Project>
+      <Name>PayTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JobTracker.Models\PayTracker.Models.csproj">
+      <Project>{cff118d8-ab7a-468c-9b23-b59248d72f52}</Project>
+      <Name>PayTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

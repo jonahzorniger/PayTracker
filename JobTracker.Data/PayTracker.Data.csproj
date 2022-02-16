@@ -72,8 +72,20 @@
     <Compile Include="Migrations\202202140412369_updated create methods.designer.cs">
       <DependentUpon>202202140412369_updated create methods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202142030473_detailsAdded.cs" />
+    <Compile Include="Migrations\202202142030473_detailsAdded.designer.cs">
+      <DependentUpon>202202142030473_detailsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202161916027_fixed headers.cs" />
+    <Compile Include="Migrations\202202161916027_fixed headers.designer.cs">
+      <DependentUpon>202202161916027_fixed headers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202161934368_added delete function.cs" />
+    <Compile Include="Migrations\202202161934368_added delete function.designer.cs">
+      <DependentUpon>202202161934368_added delete function.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="Work Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +101,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202140412369_updated create methods.resx">
       <DependentUpon>202202140412369_updated create methods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202142030473_detailsAdded.resx">
+      <DependentUpon>202202142030473_detailsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202161916027_fixed headers.resx">
+      <DependentUpon>202202161916027_fixed headers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202161934368_added delete function.resx">
+      <DependentUpon>202202161934368_added delete function.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

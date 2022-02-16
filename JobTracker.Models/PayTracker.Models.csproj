@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JobCreate.cs" />
+    <Compile Include="JobEdit.cs" />
     <Compile Include="JobListItem.cs" />
+    <Compile Include="JobDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

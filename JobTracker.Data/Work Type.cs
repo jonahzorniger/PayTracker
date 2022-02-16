@@ -7,22 +7,23 @@ using System.Threading.Tasks;
 
 namespace JobTracker.Data
 {
-    public class Product
+    public class WorkType
     {
         [Key]
-        public int ProductId { get; set; }
+        public int WorkTypeId { get; set; }
 
         [Required,
             MaxLength(100),
                 MinLength(1)]
-        public string ProductName { get; set; }
+        public string WorkTypeName { get; set; }
 
         public string Description { get; set; }
 
-        [Required,
-            MaxLength(100),
-                MinLength(1)]
-        public decimal Price { get; set; }
+        [Display(Name ="Created")]
+        public DateTimeOffset CreateUtc { get; set; }
+
+        [Display (Name ="Modified")]
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

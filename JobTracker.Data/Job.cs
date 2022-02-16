@@ -15,16 +15,17 @@ namespace JobTracker.Data
         [Required]
         public Guid OwnerId { get; set; }
 
-        [Required]
-        public int ProductId { get; set; }
 
         [Required]
         public int CustomerId { get; set; }
 
-        public string JobName { get; set; }
+
+        [Display(Name ="Work Type")]
+        public string WorkType { get; set; }
 
         public string Description { get; set; }
 
+        [Display(Name = "Sold Amount")]
         [Required]
         public int SoldAmount { get; set; }
 

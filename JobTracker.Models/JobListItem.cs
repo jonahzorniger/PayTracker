@@ -11,8 +11,8 @@ namespace JobTracker.Models
     {
         public int JobId { get; set; }
 
-
-        public string JobName { get; set; }
+        [Display(Name="Work Type")]
+        public string WorkType { get; set; }
 
         public string Description { get; set; }
 

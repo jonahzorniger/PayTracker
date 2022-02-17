@@ -34,6 +34,8 @@ namespace PayTracker.Data
         }
 
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<WorkType> WorkTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

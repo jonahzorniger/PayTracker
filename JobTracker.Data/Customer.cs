@@ -12,6 +12,8 @@ namespace JobTracker.Data
         [Key]
        public int CustomerId { get; set; }
 
+        public Guid OwnerId { get; set; }
+
         [Required,
             MaxLength(100),
                 MinLength(1)]
@@ -21,5 +23,13 @@ namespace JobTracker.Data
             MaxLength(100),
                 MinLength(1)]
        public string LastName { get; set; }
+
+        [Display(Name="Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        [Display(Name ="Updated")]
+
+        public DateTimeOffset ModifiedUtc { get; set; }
+
     }
 }

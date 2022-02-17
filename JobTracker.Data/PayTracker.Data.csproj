@@ -88,6 +88,10 @@
     <Compile Include="Migrations\202202170007277_added sold amount and earnings into edit.designer.cs">
       <DependentUpon>202202170007277_added sold amount and earnings into edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202171855385_added CustomerCreate method.cs" />
+    <Compile Include="Migrations\202202171855385_added CustomerCreate method.designer.cs">
+      <DependentUpon>202202171855385_added CustomerCreate method.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Work Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202170007277_added sold amount and earnings into edit.resx">
       <DependentUpon>202202170007277_added sold amount and earnings into edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202171855385_added CustomerCreate method.resx">
+      <DependentUpon>202202171855385_added CustomerCreate method.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

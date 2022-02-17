@@ -1,4 +1,6 @@
 ﻿using JobTracker.Models;
+using JobTracker.Services;
+using Microsoft.AspNet.Identity;
 using PayTracker.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,9 @@ namespace PayTracker.WebMVC.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            var model = new CustomerListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
+            var model = service.GetCustomers();
             return View(model);
         }
 
@@ -28,11 +32,26 @@ namespace PayTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
-            return View();
+            var service = CreateCustomerService();
+
+            if(service.CreateCustomer(model))
+            {
+                TempData["SaveResult"] = "Your customer was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Customer could not be created.");
+
+            return View(model);
+        }
+
+        private CustomerService CreateCustomerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
+            return service;
         }
     }
 }

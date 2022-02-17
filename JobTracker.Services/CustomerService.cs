@@ -36,7 +36,7 @@ namespace JobTracker.Services
             }
         }
 
-        public IEnumerable<CustomerListItem> GetCustomer()
+        public IEnumerable<CustomerListItem> GetCustomers()
         {
             using (var ctx = new ApplicationDbContext())
             {

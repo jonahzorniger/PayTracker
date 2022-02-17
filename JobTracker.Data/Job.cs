@@ -27,10 +27,10 @@ namespace JobTracker.Data
 
         [Display(Name = "Sold Amount")]
         [Required]
-        public int SoldAmount { get; set; }
+        public decimal SoldAmount { get; set; }
 
         [Required]
-        public int Earnings { get; set; }
+        public decimal Earnings { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

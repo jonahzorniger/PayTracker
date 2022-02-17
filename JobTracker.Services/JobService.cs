@@ -95,6 +95,8 @@ namespace JobTracker.Services
                 entity.WorkType = model.WorkType;
                 entity.Description = model.Description;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.SoldAmount = model.SoldAmount;
+                entity.Earnings = model.Earnings;
 
                 return ctx.SaveChanges() == 1;
                

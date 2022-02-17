@@ -17,10 +17,10 @@ namespace JobTracker.Models
         public string Description { get; set; }
 
         [Required]
-        public int SoldAmount { get; set; }
+        public decimal SoldAmount { get; set; }
 
         [Required]
-        public int Earnings { get; set; }
+        public decimal Earnings { get; set; }
 
 
         [Display(Name="Created")]

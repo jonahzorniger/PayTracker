@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<JobTracker.Models.JobListItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Jobs";
 }
 
-<h2>Index</h2>
+<h2>Jobs</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create Job", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))

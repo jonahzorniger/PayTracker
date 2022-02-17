@@ -43,11 +43,11 @@ namespace PayTracker.WebMVC.Controllers
 
             if (service.CreateJob(model))
             {
-               TempData["SaveResult"] = "Your note was created.";
+               TempData["SaveResult"] = "Your job was created.";
                return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Jobs could not be created.");
 
             return View(model);
         }
@@ -76,7 +76,9 @@ namespace PayTracker.WebMVC.Controllers
                 {
                     JobId = detail.JobId,
                     WorkType = detail.WorkType,
-                    Description = detail.Description
+                    Description = detail.Description,
+                    SoldAmount = detail.SoldAmount,
+                    Earnings = detail.Earnings
                 };
             return View(model);
         }
@@ -123,7 +125,7 @@ namespace PayTracker.WebMVC.Controllers
 
             service.DeleteJob(id);
 
-            TempData["SaveResult"] = " Your note was deleted";
+            TempData["SaveResult"] = " Your Job was deleted";
 
             return RedirectToAction("Index");
         }

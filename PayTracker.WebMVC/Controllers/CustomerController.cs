@@ -47,6 +47,14 @@ namespace PayTracker.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCustomerService();
+            var model = svc.GetCustomerById(id);
+
+            return View(model);
+        }
+
         private CustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

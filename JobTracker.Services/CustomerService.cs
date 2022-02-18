@@ -56,5 +56,25 @@ namespace JobTracker.Services
                 return query.ToArray();
             }
         }
+
+        public CustomerDetail GetCustomerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
+                return
+                    new CustomerDetail
+                    {
+                        CustomerId = entity.CustomerId,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
     }
 }

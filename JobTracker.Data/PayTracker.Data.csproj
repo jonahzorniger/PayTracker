@@ -92,8 +92,12 @@
     <Compile Include="Migrations\202202171855385_added CustomerCreate method.designer.cs">
       <DependentUpon>202202171855385_added CustomerCreate method.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202192222573_Create method Work Type.cs" />
+    <Compile Include="Migrations\202202192222573_Create method Work Type.designer.cs">
+      <DependentUpon>202202192222573_Create method Work Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Work Type.cs" />
+    <Compile Include="WorkTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202171855385_added CustomerCreate method.resx">
       <DependentUpon>202202171855385_added CustomerCreate method.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202192222573_Create method Work Type.resx">
+      <DependentUpon>202202192222573_Create method Work Type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

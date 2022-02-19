@@ -61,5 +61,19 @@ namespace PayTracker.WebMVC.Controllers
             var service = new CustomerService(userId);
             return service;
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCustomerService();
+            var detail = service.GetCustomerById(id);
+            var model =
+                new CustomerEdit
+                {
+                    CustomerId = detail.CustomerId,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                };
+            return View(model);
+        }
     }
 }

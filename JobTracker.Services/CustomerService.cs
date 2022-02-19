@@ -76,5 +76,22 @@ namespace JobTracker.Services
                     };
             }
         }
+
+        public bool UpdateCustomer(CustomerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+            
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

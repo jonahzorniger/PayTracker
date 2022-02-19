@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="CustomerCreate.cs" />
     <Compile Include="CustomerDetail.cs" />
+    <Compile Include="CustomerEdit.cs" />
     <Compile Include="CustomerListItem.cs" />
     <Compile Include="JobCreate.cs" />
     <Compile Include="JobEdit.cs" />

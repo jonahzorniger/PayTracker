@@ -75,5 +75,53 @@ namespace PayTracker.WebMVC.Controllers
                 };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CustomerEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.CustomerId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCustomerService();
+
+            if (service.UpdateCustomer(model))
+            {
+                TempData["SaveResult"] = "Your customer was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your customer could not be update");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCustomerService();
+            var model = svc.GetCustomerById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCustomerService();
+
+            service.DeleteCustomer(id);
+
+            TempData["SaveResult"] = "Your customer was deleted";
+
+;           return RedirectToAction("Index");
+        }
+
     }
 }

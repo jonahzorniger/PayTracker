@@ -77,5 +77,25 @@ namespace JobTracker.Services
                     };
             }
         }
+
+        public bool UpdateWorkType(WorkTypeEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                           .WorkTypes
+                           .Single(e => e.WorkTypeId == model.WorkTypeId && e.OwnerId == _userId);
+                
+                entity.WorkTypeName = model.WorkTypeName;
+                entity.Description = model.Description;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+
     }
 }

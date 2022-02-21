@@ -55,11 +55,27 @@ namespace PayTracker.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit (int id)
+        {
+            var service = CreateWorkTypeService();
+            var detail = service.GetWorkTypeById(id);
+            var model =
+                new WorkTypeEdit
+                {
+                    WorkTypeId = detail.WorkTypeId,
+                    WorkTypeName = detail.WorkTypeName,
+                    Description = detail.Description,
+                };
+            return View(model);
+        }
+
         private WorkTypeService CreateWorkTypeService()
         {
             var userid = Guid.Parse(User.Identity.GetUserId());
             var service = new WorkTypeService(userid);
             return service;
         }
+
+
     }
 }

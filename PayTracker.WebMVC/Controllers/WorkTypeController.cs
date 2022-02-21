@@ -93,6 +93,29 @@ namespace PayTracker.WebMVC.Controllers
             return View();
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateWorkTypeService();
+            var model = svc.GetWorkTypeById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateWorkTypeService();
+
+            service.DeleteWorkType(id);
+
+            TempData["SaveResult"] = "Your work type was deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private WorkTypeService CreateWorkTypeService()
         {
             var userid = Guid.Parse(User.Identity.GetUserId());

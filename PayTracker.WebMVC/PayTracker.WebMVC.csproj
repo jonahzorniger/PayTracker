@@ -255,6 +255,7 @@
     <Content Include="Views\WorkType\Create.cshtml" />
     <Content Include="Views\WorkType\Details.cshtml" />
     <Content Include="Views\WorkType\Edit.cshtml" />
+    <Content Include="Views\WorkType\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

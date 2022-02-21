@@ -96,6 +96,19 @@ namespace JobTracker.Services
             }
         }
 
+        public bool DeleteWorkType(int worktypeId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkTypes
+                        .Single(e => e.WorkTypeId == worktypeId && e.OwnerId == _userId);
 
+                ctx.WorkTypes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

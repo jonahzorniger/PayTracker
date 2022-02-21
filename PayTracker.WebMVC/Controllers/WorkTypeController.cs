@@ -55,7 +55,7 @@ namespace PayTracker.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Edit (int id)
+        public ActionResult Edit(int id)
         {
             var service = CreateWorkTypeService();
             var detail = service.GetWorkTypeById(id);
@@ -67,6 +67,30 @@ namespace PayTracker.WebMVC.Controllers
                     Description = detail.Description,
                 };
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, WorkTypeEdit model)
+        {
+            if(!ModelState.IsValid) return View(model);
+
+            if(model.WorkTypeId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateWorkTypeService();
+
+            if (service.UpdateWorkType(model))
+            {
+                TempData["SaveResult"] = "Your work type was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your work type could not be updated.");
+            return View();
         }
 
         private WorkTypeService CreateWorkTypeService()

@@ -75,7 +75,8 @@ namespace PayTracker.WebMVC.Controllers
                 new JobEdit
                 {
                     JobId = detail.JobId,
-                    WorkType = detail.WorkType,
+                    WorkTypeId = detail.WorkTypeId,
+        
                     Description = detail.Description,
                     SoldAmount = detail.SoldAmount,
                     Earnings = detail.Earnings

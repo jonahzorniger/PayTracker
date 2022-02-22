@@ -25,7 +25,8 @@ namespace JobTracker.Services
                 new Job()
                 {
                     OwnerId = _userId,
-                    WorkType = model.WorkType,
+                    WorkTypeId = model.WorkTypeId,
+                    
                     Description = model.Description,
                     CreatedUtc = DateTimeOffset.Now,
                     SoldAmount = model.SoldAmount,
@@ -50,7 +51,8 @@ namespace JobTracker.Services
                                         new JobListItem
                                         {
                                             JobId = e.JobId,
-                                            WorkType = e.WorkType,
+                                            WorkTypeId = e.WorkTypeId,
+                                            
                                             Description = e.Description,
                                             SoldAmount = e.SoldAmount,
                                             Earnings = e.Earnings,
@@ -73,7 +75,8 @@ namespace JobTracker.Services
                     new JobDetail
                     {
                         JobId = entity.JobId,
-                        WorkType = entity.WorkType,
+                        WorkTypeId = entity.WorkTypeId,
+                       
                         Description = entity.Description,
                         CreatedDate = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc,
@@ -92,7 +95,8 @@ namespace JobTracker.Services
                         .Jobs
                         .Single(e => e.JobId == model.JobId && e.OwnerId == _userId);
 
-                entity.WorkType = model.WorkType;
+                entity.WorkTypeId = model.WorkTypeId;
+                
                 entity.Description = model.Description;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 entity.SoldAmount = model.SoldAmount;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,7 +12,10 @@ namespace PayTracker.Models
         public int JobId { get; set; }
 
         [Display(Name = "Work Type")]
-        public string WorkType { get; set; }
+        [ForeignKey(nameof(WorkTypeId))]
+        public int WorkTypeId { get; set; }
+
+      
         public string Description { get; set; }
 
         public decimal Earnings { get; set; }

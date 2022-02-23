@@ -108,6 +108,10 @@
     <Compile Include="Migrations\202202222235333_fixing Worktype on details.designer.cs">
       <DependentUpon>202202222235333_fixing Worktype on details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202230249245_updated.cs" />
+    <Compile Include="Migrations\202202230249245_updated.designer.cs">
+      <DependentUpon>202202230249245_updated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WorkTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202222235333_fixing Worktype on details.resx">
       <DependentUpon>202202222235333_fixing Worktype on details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202230249245_updated.resx">
+      <DependentUpon>202202230249245_updated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

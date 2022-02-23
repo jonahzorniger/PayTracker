@@ -17,9 +17,9 @@ namespace JobTracker.Data
         [Required]
         public Guid OwnerId { get; set; }
 
-        public virtual Customer Customer { get; set; } = new Customer();
+        public virtual Customer Customer { get; set; } 
 
-        public virtual WorkType WorkType { get; set; } = new WorkType();
+        public virtual WorkType WorkType { get; set; }
 
         public string Description { get; set; }
 

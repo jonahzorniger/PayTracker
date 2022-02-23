@@ -44,7 +44,6 @@ namespace JobTracker.Services
                 var query =
                     ctx
                         .WorkTypes
-                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new WorkTypeListItem
@@ -65,7 +64,7 @@ namespace JobTracker.Services
                 var entity = 
                     ctx
                         .WorkTypes
-                        .Single(e => e.WorkTypeId == id && e.OwnerId == _userId);
+                        .Single(e => e.WorkTypeId == id);
                 return
                     new WorkTypeDetail
                     {
@@ -85,7 +84,7 @@ namespace JobTracker.Services
                 var entity =
                     ctx
                            .WorkTypes
-                           .Single(e => e.WorkTypeId == model.WorkTypeId && e.OwnerId == _userId);
+                           .Single(e => e.WorkTypeId == model.WorkTypeId);
                 
                 entity.WorkTypeName = model.WorkTypeName;
                 entity.Description = model.Description;
@@ -103,7 +102,7 @@ namespace JobTracker.Services
                 var entity =
                     ctx
                         .WorkTypes
-                        .Single(e => e.WorkTypeId == worktypeId && e.OwnerId == _userId);
+                        .Single(e => e.WorkTypeId == worktypeId);
 
                 ctx.WorkTypes.Remove(entity);
 

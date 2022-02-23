@@ -1,4 +1,4 @@
-﻿namespace JobTracker.Data.Migrations
+﻿namespace PayTracker.Data.Migrations
 {
     using System;
     using System.Data.Entity;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobTracker.Data
+namespace PayTracker.Data
 {
     public class Customer
     {

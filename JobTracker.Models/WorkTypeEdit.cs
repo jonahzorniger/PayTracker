@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobTracker.Models
+namespace PayTracker.Models
 {
     public class WorkTypeEdit
     {

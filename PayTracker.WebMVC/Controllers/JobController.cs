@@ -1,7 +1,6 @@
-﻿using JobTracker.Models;
-using JobTracker.Services;
+﻿using PayTracker.Models;
+using PayTracker.Services;
 using Microsoft.AspNet.Identity;
-using PayTracker.Models;
 using PayTracker.WebMVC.Models;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PayTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,12 +17,9 @@ namespace JobTracker.Data
         [Required]
         public Guid OwnerId { get; set; }
 
+        public virtual Customer Customer { get; set; } = new Customer();
 
-       
-
-        [ForeignKey(nameof(WorkTypeId))]
-        [Display(Name ="Work Type")]
-        public int WorkTypeId { get; set; }
+        public virtual WorkType WorkType { get; set; } = new WorkType();
 
         public string Description { get; set; }
 

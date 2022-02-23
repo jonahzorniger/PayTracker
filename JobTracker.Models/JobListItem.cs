@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PayTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -12,9 +13,11 @@ namespace JobTracker.Models
     {
         public int JobId { get; set; }
 
-        [Display(Name="Work Type")]
-        [ForeignKey(nameof(WorkTypeId))]
-        public int WorkTypeId { get; set; }
+       
+        [ForeignKey("WorkTypeId")]
+        public virtual WorkType WorkType { get; set; }
+
+      
 
        
 

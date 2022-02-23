@@ -100,6 +100,14 @@
     <Compile Include="Migrations\202202192244275_added details view.designer.cs">
       <DependentUpon>202202192244275_added details view.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202222219047_added worktypeid foreign key.cs" />
+    <Compile Include="Migrations\202202222219047_added worktypeid foreign key.designer.cs">
+      <DependentUpon>202202222219047_added worktypeid foreign key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202222235333_fixing Worktype on details.cs" />
+    <Compile Include="Migrations\202202222235333_fixing Worktype on details.designer.cs">
+      <DependentUpon>202202222235333_fixing Worktype on details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WorkTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202192244275_added details view.resx">
       <DependentUpon>202202192244275_added details view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202222219047_added worktypeid foreign key.resx">
+      <DependentUpon>202202222219047_added worktypeid foreign key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202222235333_fixing Worktype on details.resx">
+      <DependentUpon>202202222235333_fixing Worktype on details.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

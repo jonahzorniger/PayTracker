@@ -49,7 +49,9 @@ namespace PayTracker.Services
                                 {
                                     CustomerId = e.CustomerId,
                                     FirstName = e.FirstName,
-                                    LastName = e.LastName
+                                    LastName = e.LastName,
+                                    CreatedUtc = e.CreatedUtc,
+                                    ModifiedUtc = e.ModifiedUtc
                                 }
                         );
                 return query.ToArray();

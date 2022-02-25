@@ -79,6 +79,7 @@ namespace PayTracker.WebMVC.Controllers
         {
             var service = CreateJobService();
             var detail = service.GetJobById(id);
+
             var model =
                 new JobEdit
                 {
@@ -89,6 +90,16 @@ namespace PayTracker.WebMVC.Controllers
                     SoldAmount = detail.SoldAmount,
                     Earnings = detail.Earnings
                 };
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+
+            var workTypeService = new WorkTypeService(userId);
+            ViewBag.WorkTypeList = new SelectList(workTypeService.GetWorkTypes(), "WorkTypeId", "WorkTypeName");
+
+
+            var customerService = new CustomerService(userId);
+            ViewBag.CustomerList = new SelectList(customerService.GetCustomers(), "CustomerId", "FullName");
+
             return View(model);
         }
 

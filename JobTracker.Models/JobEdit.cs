@@ -14,13 +14,18 @@ namespace PayTracker.Models
 
         [Display(Name = "Work Type")]
         [ForeignKey("WorkTypeId")]
+        public int WorkTypeId { get; set; }
+
+
         public virtual WorkType WorkType { get; set; }
 
-        [Display(Name ="Customer")]
-        [ForeignKey("CustomerId")]
+
+        [Display(Name = "Customer")]
+        [ForeignKey("CusomterId")]
+        public int CustomerId { get; set; }
+
         public virtual Customer Customer { get; set; }
 
-        
         public string Description { get; set; }
 
         [Display(Name = "Sold Amount")]

@@ -65,6 +65,7 @@ namespace PayTracker.WebMVC.Controllers
                     WorkTypeId = detail.WorkTypeId,
                     WorkTypeName = detail.WorkTypeName,
                     Description = detail.Description,
+
                 };
             return View(model);
         }

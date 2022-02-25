@@ -59,7 +59,8 @@ namespace PayTracker.Services
                                             Description = e.Description,
                                             SoldAmount = e.SoldAmount,
                                             Earnings = e.Earnings,
-                                            CreatedUtc = e.CreatedUtc
+                                            CreatedUtc = e.CreatedUtc,
+                                            ModifiedUtc = e.ModifiedUtc
                                         }
 
                                     );
@@ -98,8 +99,8 @@ namespace PayTracker.Services
                         .Jobs
                         .Single(e => e.JobId == model.JobId && e.OwnerId == _userId);
 
-                entity.WorkType = model.WorkType;
-                entity.Customer = model.Customer;
+                entity.WorkTypeId = model.WorkTypeId;
+                entity.CustomerId = model.CustomerId;
                 entity.Description = model.Description;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 entity.SoldAmount = model.SoldAmount;

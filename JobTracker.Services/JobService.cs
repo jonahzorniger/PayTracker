@@ -21,11 +21,14 @@ namespace PayTracker.Services
 
         public bool CreateJob(JobCreate model)
         {
+            WorkTypeService workTypeService = new WorkTypeService(_userId);
+
+            IEnumerable<WorkTypeListItem> listOfWorkTypes = workTypeService.GetWorkTypes();
             var entity =
                 new Job()
                 {
                     OwnerId = _userId,
-                    WorkType = model.WorkType,
+                    WorkTypeId = model.WorkTypeId,
                     
                     Description = model.Description,
                     CreatedUtc = DateTimeOffset.Now,

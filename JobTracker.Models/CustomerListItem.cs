@@ -20,9 +20,5 @@ namespace PayTracker.Models
 
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-
-        [Display (Name = "Updated")]
-
-        public DateTimeOffset ModifiedUtc { get; set; }
     }
 }

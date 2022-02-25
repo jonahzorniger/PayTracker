@@ -19,6 +19,13 @@ namespace PayTracker.Models
         public virtual WorkType WorkType { get; set; } 
 
 
+        [Display(Name ="Customer")]
+        [ForeignKey("CusomterId")]
+        public int CustomerId { get; set; }
+
+        public virtual Customer Customer { get; set; } 
+
+
         [MaxLength(8000)]
         public string Description { get; set; }
 

@@ -116,6 +116,10 @@
     <Compile Include="Migrations\202202242046262_updating foreign keys.designer.cs">
       <DependentUpon>202202242046262_updating foreign keys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202202250420562_updating customer key.cs" />
+    <Compile Include="Migrations\202202250420562_updating customer key.designer.cs">
+      <DependentUpon>202202250420562_updating customer key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="WorkTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202202242046262_updating foreign keys.resx">
       <DependentUpon>202202242046262_updating foreign keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202250420562_updating customer key.resx">
+      <DependentUpon>202202250420562_updating customer key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,6 +30,9 @@
             @Html.DisplayNameFor(model => model.WorkType.WorkTypeName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
@@ -43,6 +46,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WorkType.WorkTypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.LastName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUtc)

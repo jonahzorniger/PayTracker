@@ -10,13 +10,17 @@ namespace PayTracker.Data
     public class Customer
     {
         [Key]
-       public int CustomerId { get; set; }
+        [Display(Name ="Customer ID")]
+
+        public int CustomerId { get; set; }
 
         public Guid OwnerId { get; set; }
 
+        
+
         [Required,
-            MaxLength(100),
-                MinLength(1)]
+         MaxLength(100),
+         MinLength(1)]
        public string FirstName { get; set; }
 
         [Required, 

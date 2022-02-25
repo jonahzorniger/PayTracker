@@ -27,9 +27,13 @@ namespace PayTracker.WebMVC.Controllers
         public ActionResult Create()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
+
             var workTypeService = new WorkTypeService(userId);
-            ViewBag.WorkTypeList = new SelectList(workTypeService.GetWorkTypes(), "WorkTypeId","WorkTypeName") ;
-         
+            ViewBag.WorkTypeList = new SelectList(workTypeService.GetWorkTypes(), "WorkTypeId","WorkTypeName");
+
+            
+            var customerService = new CustomerService(userId);
+            ViewBag.CustomerList = new SelectList(customerService.GetCustomers(), "CustomerId", "LastName");
 
             return View();
         }
@@ -80,7 +84,7 @@ namespace PayTracker.WebMVC.Controllers
                 {
                     JobId = detail.JobId,
                     WorkType = detail.WorkType,
-        
+                    Customer = detail.Customer,
                     Description = detail.Description,
                     SoldAmount = detail.SoldAmount,
                     Earnings = detail.Earnings

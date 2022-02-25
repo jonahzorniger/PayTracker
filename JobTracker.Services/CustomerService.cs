@@ -43,7 +43,6 @@ namespace PayTracker.Services
                 var query =
                     ctx
                         .Customers
-                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new CustomerListItem
@@ -64,7 +63,7 @@ namespace PayTracker.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == id && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == id);
                 return
                     new CustomerDetail
                     {
@@ -84,7 +83,7 @@ namespace PayTracker.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == model.CustomerId);
             
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
@@ -101,7 +100,7 @@ namespace PayTracker.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == customerId);
 
                 ctx.Customers.Remove(entity);
 

@@ -17,6 +17,10 @@ namespace PayTracker.Data
         [Required]
         public Guid OwnerId { get; set; }
 
+        [Display(Name ="Customer")]
+        public virtual int CustomerId { get; set; }
+
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; } 
 
         [Display(Name ="Work Type")]

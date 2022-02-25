@@ -9,6 +9,7 @@ namespace PayTracker.Models
 {
     public class CustomerDetail
     {
+        [Display(Name ="Customer ID")]
         public int CustomerId { get; set; }
 
         [Display(Name ="First Name")]

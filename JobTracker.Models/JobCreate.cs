@@ -11,20 +11,19 @@ namespace PayTracker.Models
 {
     public class JobCreate
     {
-        [Required]
-        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "There are too many characters in this field")]
-
-        [Display(Name ="Work Type")]
+        [Display(Name = "Work Type")]
         [ForeignKey("WorkTypeId")]
-        public virtual WorkType WorkType { get; set; }
+        public int WorkTypeId { get; set; }
 
-       
+
+        public virtual WorkType WorkType { get; set; } 
+
 
         [MaxLength(8000)]
         public string Description { get; set; }
 
         [Required]
+        [Display(Name ="Sold Amount")]
         public int SoldAmount { get; set; }
 
         [Required]

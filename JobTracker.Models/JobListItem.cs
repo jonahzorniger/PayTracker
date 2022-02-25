@@ -11,19 +11,17 @@ namespace PayTracker.Models
 {
     public class JobListItem
     {
+        [Display(Name ="Job ID")]
         public int JobId { get; set; }
 
        
-        [ForeignKey("WorkTypeId")]
+        [ForeignKey("Work Type ID")]
         public virtual WorkType WorkType { get; set; }
-
-      
-
-       
 
         public string Description { get; set; }
 
         [Required]
+        [Display(Name ="Sold Amount")]
         public decimal SoldAmount { get; set; }
 
         [Required]

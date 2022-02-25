@@ -12,6 +12,7 @@ namespace PayTracker.Models
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(50, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name ="Work Type")]
         public string WorkType { get; set; }    
 
         [MaxLength(8000)]

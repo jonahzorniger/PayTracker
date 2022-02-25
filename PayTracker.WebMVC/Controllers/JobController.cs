@@ -46,7 +46,7 @@ namespace PayTracker.WebMVC.Controllers
                return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Jobs could not be created.");
+            ModelState.AddModelError("", "Job could not be created.");
 
             return View(model);
         }

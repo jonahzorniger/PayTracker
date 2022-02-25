@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PayTracker.Data
 {
     public class WorkType
     {
         [Key]
+        [Display(Name ="Work Type ID")]
         public int WorkTypeId { get; set; }
 
         public Guid OwnerId { get; set; }
@@ -28,6 +30,5 @@ namespace PayTracker.Data
 
         [Display (Name ="Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-
     }
 }

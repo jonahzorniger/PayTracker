@@ -10,9 +10,11 @@ namespace PayTracker.Models
     public class CustomerCreate
     {
         [Required]
+        [Display(Name ="First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name ="Last Name")]
         public string LastName { get; set; }
     }
 }

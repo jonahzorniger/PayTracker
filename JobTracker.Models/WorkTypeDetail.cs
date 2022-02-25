@@ -9,6 +9,7 @@ namespace PayTracker.Models
 {
     public class WorkTypeDetail
     {
+        [Display(Name ="Work Type ID")]
         public int WorkTypeId { get; set; }
 
         [Display(Name="Work Type")]

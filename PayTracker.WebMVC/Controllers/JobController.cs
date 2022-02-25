@@ -33,7 +33,7 @@ namespace PayTracker.WebMVC.Controllers
 
             
             var customerService = new CustomerService(userId);
-            ViewBag.CustomerList = new SelectList(customerService.GetCustomers(), "CustomerId", "LastName");
+            ViewBag.CustomerList = new SelectList(customerService.GetCustomers(), "CustomerId", "FullName");
 
             return View();
         }

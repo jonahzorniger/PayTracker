@@ -20,11 +20,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.WorkType)
+            @Html.DisplayNameFor(model => model.WorkType.WorkTypeName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.WorkType)
+            @Html.DisplayFor(model => model.WorkType.WorkTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
         </dd>
 
         <dt>

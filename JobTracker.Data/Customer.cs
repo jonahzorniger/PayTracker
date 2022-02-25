@@ -28,6 +28,10 @@ namespace PayTracker.Data
                 MinLength(1)]
        public string LastName { get; set; }
 
+
+        [Display(Name ="Customer")]
+        public string FullName { get { return string.Concat(FirstName + " " + LastName); } }
+
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 

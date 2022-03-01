@@ -1,6 +1,13 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("https://images.unsplash.com/photo-1646083712950-921c706dde86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80");
+    background-color: #fff;
+    color: #fff;
+}
+
+.jumbotron{
+    background-color: #0026ff;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +28,23 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Bootstrap Overrides */
+.navbar-inverse {
+    background-color: #0026ff ;
+    border-color: #080808;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+a {
+    color: #f5f5f5;
+    text-decoration: none;
 }

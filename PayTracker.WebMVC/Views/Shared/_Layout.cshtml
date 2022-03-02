@@ -22,7 +22,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+         
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Jobs", "Index", "Job") </li>
@@ -45,6 +45,7 @@
         @RenderBody()
     </div>
     <footer>
+
         <p>&copy; @DateTime.Now.Year - My PayTracker Application</p>
     </footer>
 

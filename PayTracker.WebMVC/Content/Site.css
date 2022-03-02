@@ -57,10 +57,7 @@ a {
 .title{
     font-size: 60px;
     text-align: center;
-    
-    
-    
-    
+    padding-top: 20%;  
 }
 
 h1, .h1 {
@@ -70,6 +67,7 @@ h1, .h1 {
 .about{
     text-align:center;
     font-size: 30px;
+    
 }
 
 .form-group {
@@ -104,6 +102,10 @@ footer{
     background-color: #0026ff;
     color: #fff;
     text-align: center;
+}
+
+.navbar-brand{
+    font-weight: 700;
 }
 
    

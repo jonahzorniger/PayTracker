@@ -6,7 +6,7 @@
     color: #fff;
 }
 
-.jumbotron{
+.jumbotron {
     background-color: #0026ff;
 }
 
@@ -34,6 +34,7 @@ textarea {
 .navbar-inverse {
     background-color: #0026ff ;
     border-color: #080808;
+    padding-right:20px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -48,3 +49,61 @@ a {
     color: #f5f5f5;
     text-decoration: none;
 }
+
+ .container {
+    width: 100%;
+}
+
+.title{
+    font-size: 60px;
+    text-align: center;
+    
+    
+    
+    
+}
+
+h1, .h1 {
+    font-size: 100px;
+}
+
+.about{
+    text-align:center;
+    font-size: 30px;
+}
+
+.form-group {
+    margin-bottom: 80px;
+}
+
+body {
+    font-size: 20px;
+}
+
+.form-control {
+    font-size: 17px;
+    padding: 5px 15px;
+    border-radius: 9px;
+}
+
+.form-control:focus{
+    border-color: #080808;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 7px 20px;
+    border-radius: 9px;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0026ff;
+    color: #fff;
+    text-align: center;
+}
+
+   
